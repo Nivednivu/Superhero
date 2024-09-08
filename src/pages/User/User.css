@@ -1,0 +1,101 @@
+.user-from{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0e8e8;
+    border-radius: 8px;
+    box-shadow: inset;
+  }
+  
+  .user-from h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #100f0f;
+  }
+  
+  .user-from .validation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .user-from .validation label {
+    font-size: 16px;
+    color: #1a1919;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .user-from .validation input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  .user-from .validation input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .user-from button {
+    margin-top: 20px;
+    padding: 10px 50px;
+    margin-left: 20px;
+    gap: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .user-from button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Query for Responsive Design */
+  
+  @media (max-width: 768px) {
+    .user-from {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .user-from h3 {
+      font-size: 20px;
+    }
+  
+    .user-from .validation input[type="text"] {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .guser-from {
+      padding: 10px;
+    }
+  
+    .user-from h3 {
+      font-size: 18px;
+    }
+  
+    .user-from .validation label {
+      font-size: 14px;
+    }
+  
+    .user-from .validation input[type="text"] {
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    .user-from button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
