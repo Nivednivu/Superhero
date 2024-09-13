@@ -1,48 +1,49 @@
-import React from 'react'
-import './Footer.css'
-import { Col, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { FaInstagram } from "react-icons/fa6";
-import { CiLinkedin } from "react-icons/ci";
-import { FaFacebook } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import React from 'react';
+import './Footer.css';
+import { Col, Row, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
+import { CiLinkedin } from 'react-icons/ci';
+
 function Footer() {
   return (
-    <div>
-              <Row className='rowll'>
-            <Col>
+    <footer className="footer">
+      <Container>
+        <Row className="footer-row">
+          <Col md={3} className="footer-col">
             <h2>Hero</h2>
-            <p > maxime nesciunt. Debitis a aspernatur quos, odit id deleniti.</p>
-            </Col>
-            <Col className='col'>
-            <Link style={{textDecoration:'none',color:'white'}} to={'/'}>Home</Link>
-            <Link style={{textDecoration:'none',color:'white'}} to={'/'}>About</Link>
-            <Link style={{textDecoration:'none',color:'white'}} to={'/login'}>login</Link>
-            <Link style={{textDecoration:'none',color:'white'}} to={'/'}>Dashboard</Link>
-            </Col>
-            <Col className='col'>
-            <a style={{textDecoration:'none',color:'white'}}  href="">React</a>
-            <a style={{textDecoration:'none',color:'white'}} href="">React Bootstrap</a>
-            <a style={{textDecoration:'none',color:'white'}} href="">Bootswatch</a>
-            <a style={{textDecoration:'none',color:'white'}} href="">Tailwind CSS</a>
-            </Col>
-            <Col className='col-icon'>
+            <p>
+            Unleash your inner hero and be part of something greater.
+             At Hero Headquarters, we're dedicated to celebrating the extraordinary and the everyday.             </p>
+          </Col>
+          <Col md={3} className="footer-col">
+            <h3>Quick Links</h3>
+            <Link className="footer-link" to={'/'}>Home</Link>
+            <Link className="footer-link" to={'/about'}>About</Link>
+            <Link className="footer-link" to={'/grievance'}>Grievance</Link>
+          </Col>
+          <Col md={3} className="footer-col">
+            <h3>Resources</h3>
+            <a className="footer-link" href="">React</a>
+            <a className="footer-link" href="">React Bootstrap</a>
+            <a className="footer-link" href="">Bootswatch</a>
+            <a className="footer-link" href="">Tailwind CSS</a>
+          </Col>
+          <Col md={3} className="footer-col">
             <h3>Contact</h3>
-            <input type="email" className='contact' placeholder='Enter'/>
-            <button className='btn'>submit</button>
-            <div className='icons'>
-            <FaInstagram className='icons-fa'/>
-            <CiLinkedin className='icons-fa'/>
-            <FaFacebook className='icons-fa'/>
-            <FaYoutube className='icons-fa'/>
-
+            <input type="email" className="footer-input" placeholder="Enter your email" />
+            <button className="footer-btn">Submit</button>
+            <div className="footer-icons">
+              <FaInstagram className="footer-icon" />
+              <CiLinkedin className="footer-icon" />
+              <FaFacebook className="footer-icon" />
+              <FaYoutube className="footer-icon" />
             </div>
-
-            </Col>
+          </Col>
         </Row>
-
-    </div>
-  )
+      </Container>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

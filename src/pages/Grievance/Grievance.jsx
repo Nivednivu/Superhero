@@ -1,63 +1,109 @@
-import React from 'react'
-import './Grievance.css'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-function Grievance() {
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import './Grievance.css';
+import axios from 'axios';
+import Chat from '../../components/Chat/Chat';
 
-  const schema = z.object({
-    name:z.string().min(1, "user is required").max(20 , "user must be less"),
-    email:z.string().email(1, "Invalid email address"),
-    description:z.string().min(1,"please fill"),
-    phone: z
+const grievanceSchema = z.object({
+  name: z.string().min(1, { message: "Name is required" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phone: z
     .string()
     .min(10, { message: "Phone number must be at least 10 digits" })
-    .max(15, { message: "Phone number can't exceed 15 digits" })
-    .regex(/^[0-9]+$/, { message: "Phone number must contain only digits" })  }) 
-const {register,handleSubmit,formState:{errors} }=useForm({
-  resolver:zodResolver(schema)
-})
+    .max(15, { message: "Phone number is too long" }),
+  description: z.string().min(1, { message: "Description must be at least 1 characters long" }),
+});
 
+const Grievance = () => {
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+    resolver: zodResolver(grievanceSchema),
+  });
 
-const onSubmit = (data) =>{
-  console.log(data);
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/grievances/getGrievance');
+        const { name, email, phone, description } = response.data;
+        
+        setValue('name', name || '');
+        setValue('email', email || '');
+        setValue('phone', phone || '');
+        setValue('description', description || '');
+      } catch (error) {
+        console.error('Error fetching grievance data:', error);
+      }
+    };
+
+    fetchData();
+  }, [setValue]);
+
+  const onSubmit = async (data) => {
+        try {
+      const grievanceResponse = await axios.post('http://localhost:4000/grievances/postGrievances', data);
+      alert('Grievance submitted successfully and email sent');
+
+      console.log('Grievance submitted and email sent:', grievanceResponse.data);
+    } catch (error) {
+      console.error('Error submitting grievance:', error);
+      alert('Failed to submit grievance');
+    }
+  };
 
   return (
-    <div>
-<div className="grievance-form">
-  <h3>Grievance Submission</h3>
-  <div className='validation'>
-    <form onSubmit={handleSubmit(onSubmit)}>
-    <div>
-      <label>Name</label>
-      <input type="text" {...register("name")}/>
-      {errors.name && <p>{errors.name.message}</p>}
+    <div className="Grievance">
+
+      <div>
+      <h2 className='grievance-h2'>Submit Grievance</h2>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className='input'>
+          <input
+            type="text"
+            {...register("name")}
+            placeholder="Your Name"
+          />
+          {errors.name && <p>{errors.name.message}</p>}
+        </div>
+
+        <div className='input'>
+          <input
+            type="email"
+            {...register("email")}
+            placeholder="Your Email"
+          />
+          {errors.email && <p>{errors.email.message}</p>}
+        </div>
+
+        <div className='input'>
+          <input
+            type="text"
+            {...register("phone")}
+            placeholder="Your Phone Number"
+          />
+          {errors.phone && <p>{errors.phone.message}</p>}
+        </div>
+
+        <div className='text-1'>
+          <textarea className='text-area'
+            {...register("description")}
+            placeholder="Describe your grievance"
+          />
+          {errors.description && <p>{errors.description.message}</p>}
+        </div>
+
+        <button className='grivanc-btn' type="submit">Submit Grievance</button>
+      </form>
+
+      </div>
+
+      <div className='chat-chat'>
+        <Chat/>
+      </div>
+    
     </div>
-    <div>
-      <label>email</label>
-      <input type="text" {...register("email")}/>
-      {errors.email && <p>{errors.email.message}</p>}
+  );
+};
 
-    </div>
-    <div>
-      <label>phone</label>
-      <input type="text" {...register("phone")} />
-      {errors.phone && <p>{errors.phone.message}</p>}
-    </div>
-    <div className='text-area'>
-      <label>Issue of description</label>
-      <input type="text" {...register("description")}/>
-      {errors.description && <p>{errors.description.message}</p>}
-
-    </div>
-    <button type="submit">Submit</button> 
-
-
-    </form>
-  </div>
-</div>    </div>
-  )
-}
-
-export default Grievance
+export default Grievance;

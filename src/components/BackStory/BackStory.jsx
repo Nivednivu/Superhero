@@ -22,29 +22,13 @@ function BackStory() {
 <Col className='story-p'>
 <div >
     <h4 className='p'>
-    Lexi has short, fiery red hair and piercing blue eyes. She wears a black and orange costume that is adorned with flames.
+    Aetherion was born not of Earth, but from the raw essence of the multiverse itself. Gifted with the ability to traverse dimensions and manipulate the fabric of space and time, Aetherion dedicates his life to guarding Earth from threats far beyond human comprehension. His ultimate mission is to protect the delicate balance between realities, ensuring that the chaos of collapsing dimensions does not spill over into the multiverse.
 
-Backstory: Lexi was once a happy and carefree college student, with a loving family and a bright future ahead of her. Tragedy struck when her parents and younger brother were killed in a brutal home invasion. The trauma of that event left Lexi with severe survivor's guilt and a deep-seated anger.
+For millennia, Aetherion has stood as the invisible shield against interdimensional invaders, unknown forces that seek to consume and corrupt entire worlds. He moves silently between planes of existence, thwarting disasters before they ever touch the Earth's surface. His powers allow him to seal rifts between realities, disarm rogue universes on the verge of collapse, and battle ancient entities that transcend time itself.
 
-Origin Story: While trying to cope with her loss, Lexi discovered that she had developed the ability to control and manipulate fire. She learned to harness her powers and created a superhero alter ego, "Phoenix," to fight against the forces of evil that had destroyed her family.
+But the cost of this immense power weighs heavily on him. Every decision Aetherion makes has consequences—destroying a rogue dimension might save countless lives but doom others in unseen ways. His moral compass is constantly tested, as he must choose between maintaining the cosmic balance and showing mercy to those who are victims of dimensional entropy.
 
-Powers:
-
-- Ability to control and manipulate fire
-- Enhanced strength and agility
-- Resistance to heat and flames
-
-Personality: Lexi is fiercely determined and intensely passionate. As Phoenix, she is a force to be reckoned with, using her powers to protect the innocent and punish those who have escaped justice. But beneath the surface, she still grapples with the emotional scars of her past and the fear of losing those she cares about.
-
-Personal Tragedy: Lexi's past continues to haunt her, and she often struggles with:
-
-- Survivor's guilt
-- Anger and rage
-- Fear of loss and abandonment
-- Difficulty forming close relationships
-
-
-    </h4>
+Despite this burden, Aetherion remains steadfast. For him, failure is not an option. Should the balance falter, chaos would engulf the multiverse, tearing apart the very fabric of reality. And so, Aetherion continues his eternal vigil.    </h4>
          </div>
 
 </Col>

@@ -1,101 +1,183 @@
-.user-from{
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f0e8e8;
-    border-radius: 8px;
-    box-shadow: inset;
+.ff22{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.user-form {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+}
+
+.user-form h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.validation {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.validation label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #555;
+  text-align: left;
+}
+
+.validation input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.validation p {
+  font-size: 12px;
+  color: red;
+  margin-top: 5px;
+  text-align: left;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #140ce8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.validation p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.validation a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.validation a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 1124px) {
+  .user-form {
+    max-width: 550px;
+    padding: 15px;
   }
-  
-  .user-from h3 {
+
+  .user-form h3 {
+    font-size: 26px;
+  }
+
+  .validation input {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 780px) {
+  .user-form {
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .user-form h3 {
     font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #100f0f;
   }
-  
-  .user-from .validation {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+  .validation label {
+    font-size: 14px;
   }
-  
-  .user-from .validation label {
-    font-size: 16px;
-    color: #1a1919;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  .user-from .validation input[type="text"] {
-    width: 100%;
+
+  .validation input {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
   }
-  
-  .user-from .validation input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
+
+  button {
+    padding: 10px;
+    font-size: 14px;
   }
-  
-  .user-from button {
-    margin-top: 20px;
-    padding: 10px 50px;
-    margin-left: 20px;
-    gap: 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+}
+
+@media (max-width: 580px) {
+  .user-form {
+    max-width: 100%;
+    padding: 12px;
   }
-  
-  .user-from button:hover {
-    background-color: #0056b3;
+
+  .user-form h3 {
+    font-size: 22px;
   }
-  
-  /* Media Query for Responsive Design */
-  
-  @media (max-width: 768px) {
-    .user-from {
-      max-width: 100%;
-      padding: 15px;
-    }
-  
-    .user-from h3 {
-      font-size: 20px;
-    }
-  
-    .user-from .validation input[type="text"] {
-      font-size: 13px;
-    }
+
+  .validation label {
+    font-size: 13px;
   }
-  
-  @media (max-width: 480px) {
-    .guser-from {
-      padding: 10px;
-    }
-  
-    .user-from h3 {
-      font-size: 18px;
-    }
-  
-    .user-from .validation label {
-      font-size: 14px;
-    }
-  
-    .user-from .validation input[type="text"] {
-      padding: 8px;
-      font-size: 12px;
-    }
-  
-    .user-from button {
-      font-size: 14px;
-      padding: 8px 15px;
-    }
+
+  .validation input {
+    padding: 8px;
+    font-size: 14px;
   }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 414px) {
+  .user-form {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .user-form h3 {
+    font-size: 18px;
+  }
+
+  .validation label {
+    font-size: 12px;
+  }
+
+  .validation input {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .validation p {
+    font-size: 10px;
+  }
+}

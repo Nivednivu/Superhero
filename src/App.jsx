@@ -6,22 +6,27 @@ import Navbar from './components/Navbar/Navbar'
 import Grievance from './pages/Grievance/Grievance'
 import User from './pages/User/User'
 import Admin from './pages/Admin/Admin'
-import { AnimatePresence } from 'framer-motion'
 import Footer from './components/Footer/Footer'
+import AdminList from './pages/AdminList/AdminList'
 function App() {
 
   return (
-    <AnimatePresence>
+    <>
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/grievance' element={<Grievance/>}/>
-      <Route path='/user' element={<User/>}/>
-      <Route path='/admin' element={<Admin/>}/>
+      <Route path='/ulogin' element={<User/>}/>
+      <Route path='/user' element={<User insideRegister/>}/>
+
+      <Route path='/login' element={<Admin/>}/>
+      <Route path='/admin' element={<Admin insideAdminRegister/>}/>
+
+      <Route path='/list' element={<AdminList/>}/>
     </Routes>
     <Footer/>
-    </AnimatePresence>
+    </>
   )
 }
 

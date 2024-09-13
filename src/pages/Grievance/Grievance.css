@@ -1,104 +1,131 @@
-.grievance-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f0e8e8;
-    border-radius: 8px;
-    box-shadow: inset;
+.Grievance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.Grievance > div {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grievance-h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  width: 100%;
+}
+
+.input {
+  margin-bottom: 15px;
+}
+
+.input input,
+.text-area {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.text-1 {
+  margin-bottom: 15px;
+}
+
+.text-area {
+  height: 150px;
+  resize: vertical;
+}
+
+p {
+  font-size: 12px;
+  color: red;
+  margin-top: 5px;
+}
+
+.grivanc-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.grivanc-btn:hover {
+  background-color: #45a049;
+}
+
+.chat-chat {
+}
+
+@media (max-width: 1124px) {
+  .Grievance {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 780px) {
+  .grievance-h2 {
+    font-size: 20px;
   }
   
-  .grievance-form h3 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #100f0f;
-  }
-  
-  .grievance-form .validation {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .grievance-form .validation label {
-    font-size: 16px;
-    color: #1a1919;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  .grievance-form .validation input[type="text"] {
-    width: 100%;
-    padding: 10px;
+  .input input,
+  .text-area {
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
   }
   
-  .grievance-form .validation input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
+  .grivanc-btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 580px) {
+  .Grievance {
+    padding: 10px;
   }
   
-  .grievance-form button {
-    margin-top: 20px;
-    padding: 10px 20px;
+  .grievance-h2 {
+    font-size: 18px;
+  }
+
+  .input input,
+  .text-area {
+    font-size: 12px;
+  }
+  
+  .grivanc-btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 414px) {
+  .Grievance {
+    padding: 5px;
+  }
+  
+  .grievance-h2 {
     font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
   }
   
-  .grievance-form button:hover {
-    background-color: #0056b3;
-  }
-  .text-area{
-    width: max(100%);
-    height: 90px;
-padding: 10px;
+  .input input,
+  .text-area {
+    font-size: 11px;
   }
   
-  /* Media Query for Responsive Design */
-  
-  @media (max-width: 768px) {
-    .grievance-form {
-      max-width: 100%;
-      padding: 15px;
-    }
-  
-    .grievance-form h3 {
-      font-size: 20px;
-    }
-  
-    .grievance-form .validation input[type="text"] {
-      font-size: 13px;
-    }
+  .grivanc-btn {
+    font-size: 11px;
   }
-  
-  @media (max-width: 480px) {
-    .grievance-form {
-      padding: 10px;
-    }
-  
-    .grievance-form h3 {
-      font-size: 18px;
-    }
-  
-    .grievance-form .validation label {
-      font-size: 14px;
-    }
-  
-    .grievance-form .validation input[type="text"] {
-      padding: 8px;
-      font-size: 12px;
-    }
-  
-    .grievance-form button {
-      font-size: 14px;
-      padding: 8px 15px;
-    }
-  }
+}

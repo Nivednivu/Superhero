@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { IoIosCloseCircle } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
+import { IoMdLogOut } from "react-icons/io";
 
 function Navbar() {
   const [isOpen,setOpen]=useState(false)
-
+  const navigate = useNavigate()
   const textVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
@@ -19,6 +20,11 @@ function Navbar() {
         delay: 0.2      
       }        }
   };
+
+  const logout = ()=>{
+  navigate("/")
+     }
+ 
 
   return (
     <>
@@ -51,9 +57,16 @@ function Navbar() {
                 <Link className='link' to={'/admin'}> <li>admin</li>    </Link>
 
               </ul>
+
             </div>
+            <div>
+            <li  ><IoMdLogOut  size={30} onClick={logout}/></li>
+
+            </div>
+
           </ul>
-<div className='mobile' onClick={()=>setOpen(!isOpen)}>{isOpen? <IoIosCloseCircle/>  :  <CiMenuBurger/>}</div>
+          
+<div className='mobile' onClick={()=>setOpen(!isOpen)}>{isOpen? <IoIosCloseCircle color='white' size={30}/>  :  <CiMenuBurger color='white' size={30}/>}</div>
         </div>
       </div>
     </>

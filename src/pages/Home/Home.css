@@ -1,6 +1,61 @@
-.home{
-  background-color: rgb(93, 86, 86);
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
 }
+
+.hero-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero-text .highlight {
+  color: #ffd700;  
+}
+
+.hero-text p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.hero-text .btn {
+  padding: 10px 20px;
+  background-color: #ffd700;
+  color: #f0eded;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hero-text .btn:hover {
+  background-color: #e6ac00;
+  color: white;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: inset;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+
+
 .home-row{
     display: flex;
     gap: 20px;
@@ -8,14 +63,9 @@
     background-color: rgb(9, 9, 9);
     
 }
-/* .swiperslide img{
-margin-top: 80px;
-margin: 20px;
-} */
 .slider{
     display: flex;
     margin-top: 10px;
-    /* background-image: url('https://mir-s3-cdn-cf.behance.net/projects/404/b7b87e128086877.Y3JvcCwxMzg4LDEwODYsMCw2NDI.jpg'); */
 }
 .slider img{
     width: 100%;
@@ -27,20 +77,66 @@ margin: 20px;
 .slider img:hover{
     transform: scale(.9);
 }
- /* cursor pointer */
 .cursor{
     cursor: none;
-    background-color:ivory;
- height: 20px;
- width: 20px;
+    background-color: #cdbebe;
+     height: 15px;
+ width: 15px;
  border-radius: 50%;
  position: fixed;
  top: 0;
  left: 0;
  column-gap: normal;
- margin: 25px;
  
 }
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding-right: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .hero-image img {
+    max-width: 200px;
+  }
+}
+
+
 
 @media (max-width: 1024px) {
     .home-row {
@@ -58,7 +154,6 @@ margin: 20px;
     }
   }
   
-  /* Media queries for mobile (up to 600px) */
   @media (max-width: 600px) {
     .home {
       padding: 10px;
@@ -79,7 +174,7 @@ margin: 20px;
   
     .slider img {
       max-width: 100%;
-      height: auto;
+      height: 110px;
     }
   
     .cursor {

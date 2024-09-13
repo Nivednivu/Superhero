@@ -1,72 +1,98 @@
-.ss{
+.ss {
     background-image: url('https://img.freepik.com/free-photo/antique-brown-paper-texture_125540-5541.jpg');
     margin-top: 80px;
     margin-bottom: 80px;
     border-radius: 5px;
     margin-right: 100px;
+    height: 85vh;
 }
-.story{
+
+
+
+.story {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
-.img{
+
+.img {
     border-radius: 10px;
     width: 420px;
     height: 75vh;
-    /* margin-bottom: 120px; */
-    /* margin-right:220px ; */
     margin-left: 120px;
     transition: 1.05s;
-
+    margin-top: 12px;
 }
-.img:hover{
+
+.img:hover {
     transform: scale(1.02);
-
 }
-.story-p{
+
+.img {
+    border-radius: 10px;
+    width: 420px;
+    height: 75vh;
+    margin-left: 120px;
+    transition: 1.05s ease-in-out;
+    margin-top: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.story-p {
     width: 420px;
     height: 420px;
+    margin-top: 18px;
 }
-.p{
+
+
+
+.p {
     margin-left: 80px;
     color: white;
     font: 600;
     transition: 1.2s;
     text-align: justify;
-
-}
-.p:hover{
-transform: scale(1.05);
 }
 
-
+.p:hover {
+    transform: scale(1.05);
+    color: gold;
+}
 
 @media (max-width: 1024px) {
-    .story {
-        flex-direction: column;
-        align-items: center;
+    .ss {
+        margin-right: 50px;
+        height: 80vh;
     }
 
     .img {
         width: 350px;
         height: 60vh;
-        margin-left: 0;
+        margin-left: 50px;
     }
 
     .story-p {
         width: 350px;
-        height: auto;
+        height: 350px;
     }
 
     .p {
         margin-left: 40px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 768px) {
     .ss {
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-right: 20px;
+        margin-left: 20px;
+        height: 70vh;
     }
 
     .img {
@@ -75,39 +101,57 @@ transform: scale(1.05);
         margin-left: 0;
     }
 
+    .story {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .story-p {
         width: 100%;
         height: auto;
+        margin-top: 10px;
     }
 
     .p {
         margin-left: 20px;
+        font-size: 14px;
         text-align: center;
-    }
-
-    .story {
-        gap: 20px;
     }
 }
 
-
 @media (max-width: 480px) {
     .ss {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+        height: auto;
     }
 
     .img {
         width: 100%;
         height: auto;
+        margin-left: 0;
+        margin-top: 0;
     }
 
-    .p {
-        margin-left: 0;
-        text-align: center;
+    .story {
+        flex-direction: column;
+        align-items: center;
     }
 
     .story-p {
         width: 100%;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    .p {
+        margin-left: 10px;
+        font-size: 12px;
+        text-align: justify;
     }
 }
+
+
+
+
+
