@@ -3,7 +3,6 @@ import './AdminList.css';
 import axios from 'axios';
 import { MdDelete } from "react-icons/md";
 import { ServerURL } from '../../serverURL';
-import { toast } from 'react-toastify';
 
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css'
