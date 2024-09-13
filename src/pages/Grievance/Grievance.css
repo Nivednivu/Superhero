@@ -5,7 +5,9 @@
   padding: 20px;
   font-family: Arial, sans-serif;
 }
-
+.input p{
+  color: red;
+}
 .Grievance > div {
   padding: 20px;
   background-color: #f9f9f9;

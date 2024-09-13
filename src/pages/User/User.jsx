@@ -5,6 +5,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { ServerURL } from '../../serverURL';
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css'
 
 function User({insideRegister}) {
 
@@ -23,25 +27,25 @@ function User({insideRegister}) {
   const onSubmit = async (data) => {
     try {
       if (insideRegister) {
-        const response = await axios.post('http://localhost:4000/users/register', data);
+        const response = await axios.post(`${ServerURL}/users/register`, data);
         if (response.status === 200) {
-          alert('User registered successfully');
+          toast.success('User registered successfully',{position:"top-center"});
           navigate('/ulogin');
         }
       } else {
-        const response = await axios.post('http://localhost:4000/users/login', data);
+        const response = await axios.post(`${ServerURL}/users/login`, data);
         if (response.status === 200) {
           sessionStorage.setItem("existingUser", JSON.stringify(response.data.existingUser));
           sessionStorage.setItem("token", response.data.token);
-          alert('Login successful');
+          toast.success('Login successful',{position:"top-center"});
           navigate('/grievance');
         } else {
-          alert('Login failed: ' + response.statusText);
+          toast.error('Login failed: ' + response.statusText);
         }
       }
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error.message);
-      alert('Error: ' + (error.response ? error.response.data.message || "Request failed" : "Request failed"));
+      toast.error("Request failed",{position:"top-center"});
     }
   };
 
@@ -96,7 +100,7 @@ function User({insideRegister}) {
       </form>
 
     </div>
-
+<ToastContainer/>
 
     </div>
   );

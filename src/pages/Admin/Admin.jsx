@@ -5,7 +5,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { ServerURL } from '../../serverURL';
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css'
 function Admin({ insideAdminRegister }) {
   const navigate = useNavigate();
 
@@ -22,25 +25,25 @@ function Admin({ insideAdminRegister }) {
   const onSubmit = async (data) => {
     try {
       if (insideAdminRegister) {
-        const response = await axios.post('http://localhost:4000/admins/register', data);
+        const response = await axios.post(`${ServerURL}/admins/register`, data);
         if (response.status === 200) {
-          alert('User registered successfully');
+          toast.success('User registered successfully',{ position:"top-center"});
           navigate('/login');
         }
       } else {
-        const response = await axios.post('http://localhost:4000/admins/login', data);
+        const response = await axios.post(`${ServerURL}/admins/login`, data);
         if (response.status === 200) {
           sessionStorage.setItem("existingAdmin", JSON.stringify(response.data.existingAdmin));
           sessionStorage.setItem("token", response.data.token);
-          alert('Login successful');
+          toast.success('User Login successfully',{ position:"top-center"});
           navigate('/list');
         } else {
-          alert('Login failed: ' + response.statusText);
+          toast.error('User Login successfully',{ position:"top-center"});
         }
       }
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error.message);
-      alert('Error: ' + (error.response ? error.response.data.message || "Request failed" : "Request failed"));
+      toast.error('User Not Login',{position:"top-center"})
     }
   };
 
@@ -53,19 +56,19 @@ function Admin({ insideAdminRegister }) {
           {insideAdminRegister && (
             <div>
               <label>Name</label>
-              <input type="text" {...register("name")} />
-              {errors.name && <p>{errors.name.message}</p>}
+              <input className='ppp' type="text" {...register("name")} />
+              {errors.name && <p className='cc'>{errors.name.message}</p>}
             </div>
           )}
           <div>
             <label>Email</label>
             <input type="text" {...register("email")} />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && <p className='ad-p'>{errors.email.message}</p>}
           </div>
           <div>
             <label>Password</label>
             <input type="password" {...register("password")} />
-            {errors.password && <p>{errors.password.message}</p>}
+            {errors.password && <p className='ad-p'>{errors.password.message }</p>}
           </div>
           <div>
             {insideAdminRegister ? (
@@ -83,7 +86,7 @@ function Admin({ insideAdminRegister }) {
         </div>
       </form>
     </div>
-
+<ToastContainer/>
     </div>
   );
 }

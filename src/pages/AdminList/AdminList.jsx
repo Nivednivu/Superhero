@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './AdminList.css';
 import axios from 'axios';
 import { MdDelete } from "react-icons/md";
+import { ServerURL } from '../../serverURL';
+import { toast } from 'react-toastify';
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css'
 
 function AdminList() {
 
@@ -11,7 +16,7 @@ function AdminList() {
   useEffect(() => {
     const fetchGrievances = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/grievances/getGrievances'); 
+        const response = await axios.get(`${ServerURL}/grievances/getGrievances`); 
         setGrievances(response.data);
       } catch (error) {
         console.error('Error fetching grievances:', error);
@@ -26,9 +31,9 @@ function AdminList() {
 
   const deleteGrievance = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/grievances/removeGrievances/${id}`);
+      await axios.delete(`${ServerURL}/grievances/removeGrievances/${id}`);
       setGrievances(grievances.filter(grievance => grievance._id !== id));
-      alert("remove items")
+      toast.error('Removed',{position:"top-center"})
     } catch (error) {
       console.error('Error deleting grievance:', error);
     }
@@ -74,6 +79,7 @@ function AdminList() {
           ))}
         </tbody>
       </table>
+      <ToastContainer/>
     </div>
   );
 }

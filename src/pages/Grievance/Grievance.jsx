@@ -5,6 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import './Grievance.css';
 import axios from 'axios';
 import Chat from '../../components/Chat/Chat';
+import { ServerURL } from '../../serverURL';
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css'
 
 const grievanceSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -24,7 +28,7 @@ const Grievance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/grievances/getGrievance');
+        const response = await axios.get(`${ServerURL}/grievances/getGrievance`);
         const { name, email, phone, description } = response.data;
         
         setValue('name', name || '');
@@ -41,13 +45,13 @@ const Grievance = () => {
 
   const onSubmit = async (data) => {
         try {
-      const grievanceResponse = await axios.post('http://localhost:4000/grievances/postGrievances', data);
-      alert('Grievance submitted successfully and email sent');
+      const grievanceResponse = await axios.post(`${ServerURL}/grievances/postGrievances`, data);
+      toast.success('Grievance submitted successfully and email sent',{position:"top-center"});
 
       console.log('Grievance submitted and email sent:', grievanceResponse.data);
     } catch (error) {
       console.error('Error submitting grievance:', error);
-      alert('Failed to submit grievance');
+      toast.error('Failed to submit grievance',{position:"top-center"});
     }
   };
 
@@ -101,7 +105,7 @@ const Grievance = () => {
       <div className='chat-chat'>
         <Chat/>
       </div>
-    
+    <ToastContainer/>
     </div>
   );
 };
