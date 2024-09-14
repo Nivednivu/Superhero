@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { ServerURL } from '../../serverURL';
-
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css'
 function Admin({ insideAdminRegister }) {
@@ -29,6 +28,8 @@ function Admin({ insideAdminRegister }) {
         if (response.status === 200) {
           toast.success('User registered successfully',{ position:"top-center"});
           navigate('/login');
+        }else{
+          toast.error('already register')
         }
       } else {
         const response = await axios.post(`${ServerURL}/admins/login`, data);
@@ -37,13 +38,15 @@ function Admin({ insideAdminRegister }) {
           sessionStorage.setItem("token", response.data.token);
           toast.success('User Login successfully',{ position:"top-center"});
           navigate('/list');
-        } else {
-          toast.error('User Login successfully',{ position:"top-center"});
-        }
+          
+        } 
+        // else {
+        //   toast.error(' Not login',{ position:"top-center"});
+        // }
       }
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error.message);
-      toast.error('User Not Login',{position:"top-center"})
+      toast.error(' Already register',{position:"top-center"})
     }
   };
 

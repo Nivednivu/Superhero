@@ -50,6 +50,7 @@
   max-width: 400px;
   border-radius: 20px;
   box-shadow: inset;
+  margin-top: 20px;
 
   animation: float 3s ease-in-out infinite;
 }

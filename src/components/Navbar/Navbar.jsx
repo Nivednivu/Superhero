@@ -49,7 +49,7 @@ function Navbar() {
             <Link className='li' to={'/about'}><li >About</li></Link>
             <Link className='li' to={'/grievance'}><li>Grievance</li></Link>
             <div className='navbar-sing'>
-              <h2>Sing</h2>
+              <h2>Sign </h2>
               <ul className='nav-sing-dropdown'>
                 <Link className='link' to={'/user'}> <li>user</li>     </Link>
                 <hr />

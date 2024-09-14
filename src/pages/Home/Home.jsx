@@ -12,6 +12,7 @@ import { Swiper,SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y  } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import HomeBody from '../../components/HomeBody/HomeBody';
+import { Link } from 'react-router-dom';
 function Home() {
 
   const [mousePosition,setMousePosition]=useState({
@@ -73,7 +74,10 @@ const textVariants = {
 
         <p>Meet <span className="superhero-name">Captain Valor</span>, the guardian of peace and justice.</p>
         <p>Unveiling the extraordinary story of courage and heroism.</p>
-        <a href="/about" className="btn">Learn More</a>
+     
+        <Link  className="btn" to={'/about'}>Learn More</Link>
+        
+
       </div>
       <div className="hero-image">
         <img src="https://i.pinimg.com/originals/e1/9e/b3/e19eb3a4d0ad691ce7e0f4ef057d5ee0.png" alt="Superhero" />

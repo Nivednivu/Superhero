@@ -21,7 +21,7 @@ const grievanceSchema = z.object({
 });
 
 const Grievance = () => {
-  const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+  const { register, handleSubmit, formState: { errors }, setValue,reset} = useForm({
     resolver: zodResolver(grievanceSchema),
   });
 
@@ -30,7 +30,7 @@ const Grievance = () => {
       try {
         const response = await axios.get(`${ServerURL}/grievances/getGrievance`);
         const { name, email, phone, description } = response.data;
-        
+        reset()
         setValue('name', name || '');
         setValue('email', email || '');
         setValue('phone', phone || '');
@@ -41,13 +41,13 @@ const Grievance = () => {
     };
 
     fetchData();
-  }, [setValue]);
+  }, [setValue,reset]);
 
   const onSubmit = async (data) => {
         try {
       const grievanceResponse = await axios.post(`${ServerURL}/grievances/postGrievances`, data);
       toast.success('Grievance submitted successfully and email sent',{position:"top-center"});
-
+reset()
       console.log('Grievance submitted and email sent:', grievanceResponse.data);
     } catch (error) {
       console.error('Error submitting grievance:', error);

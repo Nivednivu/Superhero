@@ -31,6 +31,8 @@ function User({insideRegister}) {
         if (response.status === 200) {
           toast.success('User registered successfully',{position:"top-center"});
           navigate('/ulogin');
+        }else{
+          toast.error('user already register')
         }
       } else {
         const response = await axios.post(`${ServerURL}/users/login`, data);
@@ -39,9 +41,7 @@ function User({insideRegister}) {
           sessionStorage.setItem("token", response.data.token);
           toast.success('Login successful',{position:"top-center"});
           navigate('/grievance');
-        } else {
-          toast.error('Login failed: ' + response.statusText);
-        }
+        } 
       }
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error.message);
