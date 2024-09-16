@@ -15,6 +15,10 @@
   font-size: 48px;
   margin: 0;
 }
+.superhero-name{
+  color: #5519fb;
+}
+
 
 .hero-text .highlight {
   color: #ffd700;  
@@ -27,7 +31,7 @@
 
 .hero-text .btn {
   padding: 10px 20px;
-  background-color: #ffd700;
+  background-color: #2156e7;
   color: #f0eded;
   text-decoration: none;
   border-radius: 5px;
@@ -78,7 +82,7 @@
 .slider img:hover{
     transform: scale(.9);
 }
-.cursor{
+/* .cursor{
     cursor: none;
     background-color: #cdbebe;
      height: 15px;
@@ -89,7 +93,7 @@
  left: 0;
  column-gap: normal;
  
-}
+} */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);

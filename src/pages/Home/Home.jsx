@@ -88,7 +88,7 @@ const textVariants = {
 
       <div className="home">
       <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y ,EffectCoverflow]}
+      modules={[Navigation, Pagination, Scrollbar, A11y ,EffectCoverflow]}
 spaceBetween={50}
 effect='coverflow'
 slidesPerView={3}
