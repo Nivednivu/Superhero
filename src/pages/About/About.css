@@ -160,8 +160,8 @@ h3 {
 .h3 {
   margin-left: 600px;
   font-size: 2.5rem;
-  color: rgb(83, 211, 198); /* Dark gray for the base text color */
-  -webkit-text-stroke: 3px rgb(0, 255, 162); /* Neon green stroke for high contrast */
+  color: rgb(138, 176, 194); /* Dark gray for the base text color */
+  -webkit-text-stroke: 3px rgb(0, 174, 255); /* Neon green stroke for high contrast */
   position: relative; /* To ensure pseudo-element positions correctly */
 }
 
@@ -170,6 +170,7 @@ h3 {
   position: absolute;
   left: 0;
   top: 0;
+
   width: 0;
   white-space: nowrap; /* Prevent text from breaking */
   overflow: hidden;
