@@ -166,7 +166,7 @@ h3 {
 }
 
 .h3::before {
-  content: "About of Super Hero ";
+  content: "About of Hero ";
   position: absolute;
   left: 0;
   top: 0;
@@ -272,7 +272,7 @@ h3 {
   }
 
   .h3 {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     margin-left: 50px;
   }
 
