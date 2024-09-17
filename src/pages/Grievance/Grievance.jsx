@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,6 +9,7 @@ import { ServerURL } from '../../serverURL';
 
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css'
+import Navbar from '../../components/Navbar/Navbar';
 
 const grievanceSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -21,6 +22,9 @@ const grievanceSchema = z.object({
 });
 
 const Grievance = () => {
+
+  const [nav,setNav] = useState(true)
+
   const { register, handleSubmit, formState: { errors }, setValue,reset} = useForm({
     resolver: zodResolver(grievanceSchema),
   });
@@ -56,57 +60,62 @@ reset()
   };
 
   return (
-    <div className="Grievance">
+    <>
+    <Navbar setNav={nav}/>
+        <div className="Grievance">
 
-      <div>
-      <h2 className='grievance-h2'>Submit Grievance</h2>
+<div>
+<h2 className='grievance-h2'>Submit Grievance </h2>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='input'>
-          <input
-            type="text"
-            {...register("name")}
-            placeholder="Your Name"
-          />
-          {errors.name && <p>{errors.name.message}</p>}
-        </div>
+<form onSubmit={handleSubmit(onSubmit)}>
+  <div className='input'>
+    <input
+      type="text"
+      {...register("name")}
+      placeholder="Your Name"
+    />
+    {errors.name && <p>{errors.name.message}</p>}
+  </div>
 
-        <div className='input'>
-          <input
-            type="email"
-            {...register("email")}
-            placeholder="Your Email"
-          />
-          {errors.email && <p>{errors.email.message}</p>}
-        </div>
+  <div className='input'>
+    <input
+      type="email"
+      {...register("email")}
+      placeholder="Your Email"
+    />
+    {errors.email && <p>{errors.email.message}</p>}
+  </div>
 
-        <div className='input'>
-          <input
-            type="text"
-            {...register("phone")}
-            placeholder="Your Phone Number"
-          />
-          {errors.phone && <p>{errors.phone.message}</p>}
-        </div>
+  <div className='input'>
+    <input
+      type="text"
+      {...register("phone")}
+      placeholder="Your Phone Number"
+    />
+    {errors.phone && <p>{errors.phone.message}</p>}
+  </div>
 
-        <div className='text-1'>
-          <textarea className='text-area'
-            {...register("description")}
-            placeholder="Describe your grievance"
-          />
-          {errors.description && <p>{errors.description.message}</p>}
-        </div>
+  <div className='text-1'>
+    <textarea className='text-area'
+      {...register("description")}
+      placeholder="Describe your issue"
+    />
+    {errors.description && <p>{errors.description.message}</p>}
+  </div>
 
-        <button className='grivanc-btn' type="submit">Submit Grievance</button>
-      </form>
+  <button className='grivanc-btn' type="submit">Submit Grievance and Send mail</button>
+</form>
 
-      </div>
+</div>
 
-      <div className='chat-chat'>
-        <Chat/>
-      </div>
-    <ToastContainer/>
-    </div>
+<div className='chat-chat'>
+  <Chat/>
+</div>
+</div>
+<ToastContainer/>
+
+    </>
+
   );
 };
 

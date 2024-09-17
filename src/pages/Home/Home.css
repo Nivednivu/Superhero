@@ -16,9 +16,15 @@
   margin: 0;
 }
 .superhero-name{
-  color: #5519fb;
+  color: #0011ff;
+transition: 1.8s;
+font: 700;
 }
+.superhero-name:hover{
+  transform: scale(2);
+  color: rgb(0, 0, 0);
 
+}
 
 .hero-text .highlight {
   color: #ffd700;  

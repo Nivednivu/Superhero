@@ -166,7 +166,7 @@ h3 {
 }
 
 .h3::before {
-  content: "About of Hero ";
+  content: "About of Murali";
   position: absolute;
   left: 0;
   top: 0;

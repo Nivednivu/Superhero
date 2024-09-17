@@ -32,12 +32,15 @@ function Chat() {
   };
 
   return (
-    <div className='chat-container'>
-      <h1 className='chat-h1'>Chat AI</h1>
+    <>
+        <div className='chat-container'>
+      <h1 className='chat-h1'>Hi! How can I help you?</h1>
       <textarea value={question} onChange={(e)=>setQusetion(e.target.value)} cols={30} rows={10}></textarea>
       <button className='chat-ben ' onClick={generateAnswer}>Generate answer</button>
       <pre className='chat-pre'>{answer}</pre>
     </div>
+
+    </>
   );
 }
 

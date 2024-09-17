@@ -11,7 +11,7 @@ function Footer() {
       <Container>
         <Row className="footer-row">
           <Col md={3} className="footer-col">
-            <h2>Hero</h2>
+            <h2 className='hero'>Murali</h2>
             <p>
             Unleash your inner hero and be part of something greater.
              At Hero Headquarters, we're dedicated to celebrating the extraordinary and the everyday.             </p>
@@ -20,7 +20,7 @@ function Footer() {
             <h3>Quick Links</h3>
             <Link className="footer-link" to={'/'}>Home</Link>
             <Link className="footer-link" to={'/about'}>About</Link>
-            <Link className="footer-link" to={'/grievance'}>Grievance</Link>
+            <Link className="footer-link" to={'/user'}>Grievance</Link>
           </Col>
           <Col md={3} className="footer-col">
             <h3>Resources</h3>

@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { IoIosCloseCircle } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
-import { IoMdLogOut } from "react-icons/io";
+import { RiLogoutBoxFill } from "react-icons/ri";
 
-function Navbar() {
+function Navbar({setNav}) {
   const [isOpen,setOpen]=useState(false)
   const navigate = useNavigate()
   const textVariants = {
@@ -47,7 +47,9 @@ function Navbar() {
           <ul className={isOpen?"mobile":"nav-page"} onClick={()=>setOpen(false)}>
             <Link className='li' to={'/'}>   <li  >Home</li>  </Link>
             <Link className='li' to={'/about'}><li >About</li></Link>
-            <Link className='li' to={'/grievance'}><li>Grievance</li></Link>
+            <Link className='li' to={'/user'}><li>Grievance</li></Link>
+{ 
+!setNav? 
             <div className='navbar-sing'>
               <h2>Sign </h2>
               <ul className='nav-sing-dropdown'>
@@ -59,11 +61,14 @@ function Navbar() {
               </ul>
 
             </div>
+            :
             <div>
-            <li  ><IoMdLogOut  size={30} onClick={logout}/></li>
+            <li  ><RiLogoutBoxFill   size={30} onClick={logout}/></li>
 
             </div>
 
+
+}
           </ul>
           
 <div className='mobile' onClick={()=>setOpen(!isOpen)}>{isOpen? <IoIosCloseCircle color='white' size={30}/>  :  <CiMenuBurger color='white' size={30}/>}</div>
