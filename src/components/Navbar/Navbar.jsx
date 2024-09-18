@@ -48,18 +48,11 @@ function Navbar({setNav}) {
             <Link className='li' to={'/'}>   <li  >Home</li>  </Link>
             <Link className='li' to={'/about'}><li >About</li></Link>
             <Link className='li' to={'/user'}><li>Grievance</li></Link>
+
 { 
 !setNav? 
             <div className='navbar-sing'>
-              <h2>Sign </h2>
-              <ul className='nav-sing-dropdown'>
-                <Link className='link' to={'/user'}> <li>user</li>     </Link>
-                <hr />
-
-                <Link className='link' to={'/admin'}> <li>admin</li>    </Link>
-
-              </ul>
-
+                <Link className='li' to={'/user'}> <li>user</li>     </Link>
             </div>
             :
             <div>
