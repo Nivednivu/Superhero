@@ -1,8 +1,15 @@
-# React + Vite
+react-router-dom: For routing between pages.
+react-hook-form and zod: For form handling and validation.
+Framer Motion for animations and react-toastify for notifications.
+Functionality:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Home Page: Engaging content with animations introducing the superhero.
+About Us Page: Storytelling format to describe the superhero's mission and background.
+Grievance Submission Page: Form for users to submit grievances, with client-side validation.
+Superhero Dashboard: Secure login to view, filter, manage grievances, including options to search, update status, and delete grievances.
+Set up an email notification using Nodemailer .
+ AI Model Integration to chat ai in gemini .
+Design Decisions:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Responsive UI/UX: Modern design principles ensuring good appearance across devices.
+Performance Optimization: Lazy load images and minimize API requests for smooth functionality.
